@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+	<name>com_shoutbox</name>
+	<author>JoomJunk</author>
+	<creationDate>20 March 2015</creationDate>
+	<copyright>Copyright (C) 2015 JoomJunk. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>
+	<authorEmail>admin@joomjunk.co.uk</authorEmail>
+	<authorUrl>www.joomjunk.co.uk</authorUrl>
+	<version>1.0.0</version>
+	<description>COM_SHOUTBOX_DESCRIPTION</description>
+
+	<media destination="com_shoutbox" folder="media">
+		<filename>index.html</filename>
+		<folder>images</folder>
+	</media>
+
+	<administration>
+
+		<menu img="../media/com_shoutbox/images/tux-16x16.png">COM_SHOUTBOX_MENU</menu>
+
+		<files folder="admin">
+			<filename>index.html</filename>
+			<filename>shoutbox.php</filename>
+			<filename>controller.php</filename>
+			<folder>tables</folder>
+			<folder>models</folder>
+			<folder>views</folder>
+			<folder>helpers</folder>
+			<folder>controllers</folder>
+		</files>
+		
+		<languages folder="admin/language">
+            <language tag="en-GB">en-GB/en-GB.com_shoutbox.ini</language>
+            <language tag="en-GB">en-GB/en-GB.com_shoutbox.sys.ini</language>
+        </languages>
+		
+	</administration>
+
+</extension>

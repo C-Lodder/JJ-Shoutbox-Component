@@ -15,9 +15,15 @@ abstract class ShoutboxHelper
 	public static function addSubmenu($submenu) 
 	{
 		JSubMenuHelper::addEntry(
-			JText::_('COM_SHOUTBOX_SUBMENU_SHOUTS'),
+			'<i class="icon-list-view"></i> ' . JText::_('COM_SHOUTBOX_SUBMENU_SHOUTS'),
 			'index.php?option=com_shoutbox',
 			$submenu == 'shouts'
+		);
+		
+		JSubMenuHelper::addEntry(
+			'<i class="icon-star"></i> ' . JText::_('COM_SHOUTBOX_SUBMENU_SMILIES'),
+			'index.php?option=com_shoutbox&view=smilies',
+			$submenu == 'smilies'
 		);
 
 	}

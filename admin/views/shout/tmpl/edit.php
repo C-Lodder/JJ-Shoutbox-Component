@@ -13,7 +13,7 @@ defined('_JEXEC') or die;
     method="post" name="adminForm" id="adminForm">
     <div class="form-horizontal">
         <fieldset class="adminform">
-            <legend><?php echo JText::_('COM_SHOUTBOX_SHOUT_DETAILS'); ?></legend>
+            <legend><?php echo JText::_('COM_SHOUTBOX_MANAGER_EDIT'); ?></legend>
             <div class="row-fluid">
                 <div class="span6">
                     <?php foreach ($this->form->getFieldset() as $field): ?>

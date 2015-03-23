@@ -9,7 +9,7 @@
 defined('_JEXEC') or die;
 
 
-class ShoutboxViewShouts extends JViewLegacy
+class ShoutboxViewSmilies extends JViewLegacy
 {
 	/**
 	 * Display the Shouts view
@@ -35,7 +35,7 @@ class ShoutboxViewShouts extends JViewLegacy
 			return false;
 		}
 		
-		ShoutboxHelper::addSubmenu('shouts');
+		ShoutboxHelper::addSubmenu('smilies');
 		
 		// Set the tool-bar and number of found items
 		$this->addToolBar();
@@ -64,8 +64,8 @@ class ShoutboxViewShouts extends JViewLegacy
 		}
 
 		JToolBarHelper::title($title, 'shoutbox');
-		JToolBarHelper::addNew('shout.add');
-		JToolBarHelper::editList('shout.edit');
-		JToolBarHelper::deleteList('', 'shouts.delete');
+		JToolBarHelper::addNew('smiley.add');
+		JToolBarHelper::editList('smiley.edit');
+		JToolBarHelper::deleteList('', 'smilies.delete');
 	}
 }

@@ -13,10 +13,10 @@ JHtml::_('formbehavior.chosen', 'select');
 $listOrder     = $this->escape($this->state->get('list.ordering'));
 $listDirn      = $this->escape($this->state->get('list.direction'));
 ?>
-<form action="index.php?option=com_shoutbox&view=shouts" method="post" id="adminForm" name="adminForm">
+<form action="index.php?option=com_shoutbox&view=smilies" method="post" id="adminForm" name="adminForm">
 	<div class="row-fluid">
 		<div class="span6">
-			<?php echo JText::_('COM_SHOUTBOX_SHOUTS_FILTER'); ?>
+			<?php echo JText::_('COM_SHOUTBOX_FILTER'); ?>
 			<?php
 				echo JLayoutHelper::render(
 					'joomla.searchtools.default',
@@ -32,17 +32,11 @@ $listDirn      = $this->escape($this->state->get('list.direction'));
 			<th width="5%">
 				<input type="checkbox" name="toggle" value="" onclick="checkAll(<?php echo count($this->items); ?>)" />
 			</th>
-			<th width="12%">
-				<?php echo JHtml::_('grid.sort', 'COM_SHOUTBOX_SHOUTS_NAME', 'name', $listDirn, $listOrder);?>
+			<th>
+				<?php echo JHtml::_('grid.sort', 'COM_SHOUTBOX_SMILIES_CODE', 'code', $listDirn, $listOrder);?>
 			</th>
-			<th width="8%">
-				<?php echo JHtml::_('grid.sort', 'COM_SHOUTBOX_SHOUTS__USER_ID', 'user_id', $listDirn, $listOrder); ?>
-			</th>
-			<th width="69%">
-				<?php echo JHtml::_('grid.sort', 'COM_SHOUTBOX_SHOUTS_MESSAGE', 'msg', $listDirn, $listOrder);?>
-			</th>
-			<th width="5%">
-				<?php echo JHtml::_('grid.sort', 'COM_SHOUTBOX_SHOUTS_ID', 'id', $listDirn, $listOrder); ?>
+			<th>
+				<?php echo JHtml::_('grid.sort', 'COM_SHOUTBOX_SMILIES_IMAGE', 'image', $listDirn, $listOrder); ?>
 			</th>
 		</tr>
 		</thead>
@@ -56,7 +50,7 @@ $listDirn      = $this->escape($this->state->get('list.direction'));
 		<tbody>
 			<?php if (!empty($this->items)) : ?>
 				<?php foreach ($this->items as $i => $row) :
-					$link = JRoute::_('index.php?option=com_shoutbox&task=shout.edit&id=' . $row->id);
+					$link = JRoute::_('index.php?option=com_shoutbox&task=smiley.edit&id=' . $row->id);
 				?>
 					<tr>
 						<td><?php echo $this->pagination->getRowOffset($i); ?></td>
@@ -64,18 +58,12 @@ $listDirn      = $this->escape($this->state->get('list.direction'));
 							<?php echo JHtml::_('grid.id', $i, $row->id); ?>
 						</td>
 						<td align="center">
-							<?php echo $row->name; ?>
-						</td>
-						<td align="center">
-							<?php echo $row->user_id; ?>
+							<?php echo $row->code; ?>
 						</td>
 						<td>
 							<a href="<?php echo $link; ?>">
-								<?php echo $row->msg; ?>
+								<?php echo $row->image; ?>
 							</a>
-						</td>
-						<td align="center">
-							<?php echo $row->id; ?>
 						</td>
 					</tr>
 				<?php endforeach; ?>

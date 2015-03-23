@@ -9,6 +9,12 @@
 	<authorUrl>www.joomjunk.co.uk</authorUrl>
 	<version>1.0.0</version>
 	<description>COM_SHOUTBOX_DESCRIPTION</description>
+	
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.sql</file>
+		</sql>
+	</install>
 
 	<media destination="com_shoutbox" folder="media">
 		<filename>index.html</filename>

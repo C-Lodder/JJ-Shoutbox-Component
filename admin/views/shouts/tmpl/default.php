@@ -16,7 +16,7 @@ $listDirn      = $this->escape($this->state->get('list.direction'));
 <form action="index.php?option=com_shoutbox&view=shouts" method="post" id="adminForm" name="adminForm">
 	<div class="row-fluid">
 		<div class="span6">
-			<?php echo JText::_('COM_SHOUTBOX_SHOUTS_FILTER'); ?>
+			<?php echo JText::_('COM_SHOUTBOX_FILTER'); ?>
 			<?php
 				echo JLayoutHelper::render(
 					'joomla.searchtools.default',

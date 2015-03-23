@@ -9,23 +9,27 @@
 defined('_JEXEC') or die;
 
 
-class ShoutboxViewSmilies extends JViewLegacy
+class ShoutboxViewSmiley extends JViewLegacy
 {
 	/**
-	 * Display the Shouts view
+	 * View form
+	 *
+	 * @var         form
+	 */
+	protected $form = null;
+
+	/**
+	 * Display the Shout view
 	 *
 	 * @param   string  $tpl  The name of the template file to parse; automatically searches through the template paths.
 	 *
 	 * @return  void
 	 */
-	function display($tpl = null)
+	public function display($tpl = null)
 	{
-		// Get data from the model
-		$this->items		= $this->get('Items');
-		$this->pagination	= $this->get('Pagination');
-		$this->state		= $this->get('State');
-		$this->filterForm    = $this->get('FilterForm');
-		$this->activeFilters = $this->get('ActiveFilters');
+		// Get the Data
+		$form = $this->get('Form');
+		$item = $this->get('Item');
 
 		// Check for errors.
 		if (count($errors = $this->get('Errors')))
@@ -34,14 +38,15 @@ class ShoutboxViewSmilies extends JViewLegacy
 
 			return false;
 		}
-		
-		ShoutboxHelper::addSubmenu('smilies');
-		
-		// Set the tool-bar and number of found items
+
+		// Assign the Data
+		$this->form = $form;
+		$this->item = $item;
+
+		// Set the toolbar
 		$this->addToolBar();
 
 		// Display the template
-		$this->sidebar = JHtmlSidebar::render();
 		parent::display($tpl);
 	}
 
@@ -54,13 +59,24 @@ class ShoutboxViewSmilies extends JViewLegacy
 	 */
 	protected function addToolBar()
 	{
-		require_once JPATH_COMPONENT . '/helpers/shoutbox.php';
-		
-		$title = JText::_('COM_SHOUTBOX_MANAGER');
+		$input = JFactory::getApplication()->input;
+
+		// Hide Joomla Administrator Main menu
+		$input->set('hidemainmenu', true);
+
+		$isNew = ($this->item->id == 0);
+
+		if ($isNew)
+		{
+			$title = JText::_('COM_SHOUTBOX_SMILEY_NEW');
+		}
+		else
+		{
+			$title = JText::_('COM_SHOUTBOX_SMILEY_EDIT');
+		}
 
 		JToolBarHelper::title($title, 'shoutbox');
-		JToolBarHelper::addNew('smiley.add');
-		JToolBarHelper::editList('smiley.edit');
-		JToolBarHelper::deleteList('', 'smilies.delete');
+		JToolBarHelper::save('smiley.save');
+		JToolBarHelper::cancel('smiley.cancel');
 	}
 }

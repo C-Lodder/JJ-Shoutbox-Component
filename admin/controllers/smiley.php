@@ -5,18 +5,17 @@
 * @license    GPL v3.0 or later http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-// No direct access
+// No direct access to this file
 defined('_JEXEC') or die;
 
-class ShoutboxTableShoutbox extends JTable
+
+class ShoutboxControllerSmiley extends JControllerForm
 {
 	/**
-	 * Constructor
+	 * The URL view list variable.
 	 *
-	 * @param   JDatabaseDriver  &$db  A database connector object
+	 * @var    string
+	 * @since  12.2
 	 */
-	function __construct(&$db)
-	{
-		parent::__construct('#__shoutbox', 'id', $db);
-	}
+	protected $view_list = 'smilies';
 }

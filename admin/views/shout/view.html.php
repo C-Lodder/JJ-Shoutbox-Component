@@ -68,18 +68,15 @@ class ShoutboxViewShout extends JViewLegacy
 
 		if ($isNew)
 		{
-			$title = JText::_('COM_SHOUTBOX_MANAGER_NEW');
+			$title = JText::_('COM_SHOUTBOX_SHOUT_NEW');
 		}
 		else
 		{
-			$title = JText::_('COM_SHOUTBOX_MANAGER_EDIT');
+			$title = JText::_('COM_SHOUTBOX_SHOUT_EDIT');
 		}
 
 		JToolBarHelper::title($title, 'shoutbox');
 		JToolBarHelper::save('shout.save');
-		JToolBarHelper::cancel(
-			'shout.cancel',
-			$isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE'
-		);
+		JToolBarHelper::cancel('shout.cancel');
 	}
 }

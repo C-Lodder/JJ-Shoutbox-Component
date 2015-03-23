@@ -24,8 +24,8 @@ class ShoutboxModelShouts extends JModelList
 		{
 			$config['filter_fields'] = array(
 				'id',
-				'msg',
-				'name'
+				'name',
+				'msg'
 			);
 		}
 

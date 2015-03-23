@@ -13,7 +13,7 @@ defined('_JEXEC') or die;
     method="post" name="adminForm" id="adminForm">
     <div class="form-horizontal">
         <fieldset class="adminform">
-            <legend><?php echo JText::_('COM_SHOUTBOX_SHOUT_EDIT'); ?></legend>
+            <legend><?php echo JText::_('COM_SHOUTBOX_SMILEY_EDIT'); ?></legend>
             <div class="row-fluid">
                 <div class="span6">
                     <?php foreach ($this->form->getFieldset() as $field): ?>
@@ -26,6 +26,6 @@ defined('_JEXEC') or die;
             <div>
         </fieldset>
     <div>
-    <input type="hidden" name="task" value="shout.edit" />
+    <input type="hidden" name="task" value="smiley.edit" />
     <?php echo JHtml::_('form.token'); ?>
 </form>

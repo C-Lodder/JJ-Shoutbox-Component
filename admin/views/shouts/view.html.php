@@ -58,11 +58,6 @@ class ShoutboxViewShouts extends JViewLegacy
 		
 		$title = JText::_('COM_SHOUTBOX_MANAGER');
 
-		if ($this->pagination->total)
-		{
-			$title .= "<span style='font-size: 0.5em; vertical-align: middle;'>(" . $this->pagination->total . ")</span>";
-		}
-
 		JToolBarHelper::title($title, 'shoutbox');
 		JToolBarHelper::addNew('shout.add');
 		JToolBarHelper::editList('shout.edit');

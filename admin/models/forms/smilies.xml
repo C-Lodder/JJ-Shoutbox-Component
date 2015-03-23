@@ -21,7 +21,7 @@
 			
 		<field
 			name="image"
-			type="text"
+			type="media"
 			label="COM_SHOUTBOX_FIELD_IMAGE_LABEL"
 			description="COM_SHOUTBOX_FIELD_IMAGE_LABEL_DESC"
 			class="inputbox"

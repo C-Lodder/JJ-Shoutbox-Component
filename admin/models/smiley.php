@@ -8,7 +8,7 @@
 // No direct access to this file
 defined('_JEXEC') or die;
 
-class ShoutboxModelShout extends JModelAdmin
+class ShoutboxModelSmiley extends JModelAdmin
 {
 	/**
 	 * Method to get a table object, load it if necessary.
@@ -21,7 +21,7 @@ class ShoutboxModelShout extends JModelAdmin
 	 *
 	 * @since   1.6
 	 */
-	public function getTable($type = 'Shouts', $prefix = 'ShoutboxTable', $config = array())
+	public function getTable($type = 'Smilies', $prefix = 'ShoutboxTable', $config = array())
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}
@@ -40,8 +40,8 @@ class ShoutboxModelShout extends JModelAdmin
 	{
 		// Get the form.
 		$form = $this->loadForm(
-			'com_shoutbox.shouts',
-			'shouts',
+			'com_shoutbox.smilies',
+			'smilies',
 			array(
 				'control' => 'jform',
 				'load_data' => $loadData
@@ -67,7 +67,7 @@ class ShoutboxModelShout extends JModelAdmin
 	{
 		// Check the session for previously entered form data.
 		$data = JFactory::getApplication()->getUserState(
-			'com_shoutbox.edit.shouts.data',
+			'com_shoutbox.edit.smiley.data',
 			array()
 		);
 

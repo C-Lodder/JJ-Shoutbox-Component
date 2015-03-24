@@ -1,11 +1,13 @@
+DROP TABLE IF EXISTS `#__shoutbox_smilies`;
+
 CREATE TABLE IF NOT EXISTS `#__shoutbox_smilies` (
   `id` int(4) NOT NULL AUTO_INCREMENT,
-  `code` varchar(12) NOT NULL DEFAULT '',
-  `image` varchar(50) NOT NULL DEFAULT '',
+  `code` varchar(12) NOT NULL,
+  `image` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
 
-INSERT INTO `#__shoutbox_smilies` (`id`, `code`, `location`) VALUES
+INSERT INTO `#__shoutbox_smilies` (`id`, `code`, `image`) VALUES
 (1, ':)', 'icon_e_smile.gif'),
 (2, ':(', 'icon_e_sad.gif'),
 (3, ':D', 'icon_e_biggrin.gif'),

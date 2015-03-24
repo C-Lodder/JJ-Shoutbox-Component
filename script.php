@@ -27,7 +27,7 @@ class Com_ShoutboxInstallerScript
 
 			foreach ($files as $file)
 			{
-				JFile::move($original . '/' . $file, $dest . $folder . '/' . $file);
+				JFile::copy($original . '/' . $file, $dest . $folder . '/' . $file);
 			}
 		}
 	}

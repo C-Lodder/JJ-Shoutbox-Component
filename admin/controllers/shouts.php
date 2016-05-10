@@ -22,7 +22,7 @@ class ShoutboxControllerShouts extends JControllerAdmin
 	 *
 	 * @since   1.6
 	 */
-	public function getModel($name = 'Shoutbox', $prefix = 'ShoutboxModel', $config = array('ignore_request' => true))
+	public function getModel($name = 'Shout', $prefix = 'ShoutboxModel', $config = array('ignore_request' => true))
 	{
 		$model = parent::getModel($name, $prefix, $config);
 

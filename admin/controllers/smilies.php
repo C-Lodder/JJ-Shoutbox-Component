@@ -22,7 +22,7 @@ class ShoutboxControllerSmilies extends JControllerAdmin
 	 *
 	 * @since   1.6
 	 */
-	public function getModel($name = 'Smilies', $prefix = 'ShoutboxModel', $config = array('ignore_request' => true))
+	public function getModel($name = 'Smiley', $prefix = 'ShoutboxModel', $config = array('ignore_request' => true))
 	{
 		$model = parent::getModel($name, $prefix, $config);
 
